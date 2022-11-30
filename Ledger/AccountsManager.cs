@@ -18,6 +18,7 @@ namespace Ledger
             public string CategorieBilant { get; set; }
             public string SubcategorieBilant { get; set; }
             public string Intrari { get; set; }
+            public string Bilant { get; set; }
         }
 
         internal static List<Account> Accounts = new List<Account>();
@@ -29,6 +30,7 @@ namespace Ledger
             {
                 IEnumerable<Account> records = csv.GetRecords<Account>();
                 Accounts = records.ToList();
+                Accounts.Insert(0, new Account() { Id = 0, Nume = "Sold Initial" });
             }
         }
     }
