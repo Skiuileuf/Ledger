@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,12 @@ namespace Ledger
         public class Account
         {
             public int Id { get; set; }
-            public string Nume { get; set; }
-            public string IncadrareCont { get; set; }
-            public string CategorieBilant { get; set; }
-            public string SubcategorieBilant { get; set; }
-            public string Intrari { get; set; }
-            public string Bilant { get; set; }
+            public string? Nume { get; set; }
+            public string? IncadrareCont { get; set; }
+            public string? CategorieBilant { get; set; }
+            public string? SubcategorieBilant { get; set; }
+            public string? Intrari { get; set; }
+            public string? Bilant { get; set; }
         }
 
         internal static List<Account> Accounts = new List<Account>();

@@ -1,4 +1,6 @@
-﻿namespace Ledger
+﻿using System.Windows.Forms;
+
+namespace Ledger
 {
     partial class Main
     {

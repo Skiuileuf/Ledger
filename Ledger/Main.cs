@@ -1,4 +1,9 @@
+using SharpDocx;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Ledger
 {
@@ -34,7 +39,7 @@ namespace Ledger
             }
 
             // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && (((TextBox)sender).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -126,8 +131,8 @@ namespace Ledger
 
             foreach(LedgerManager.OperationRecord or in LedgerManager.OperationRecords)
             {
-                LedgerManager.LedgerRecord ContDebitor = null;
-                LedgerManager.LedgerRecord ContCreditor = null;
+                LedgerManager.LedgerRecord? ContDebitor = null;
+                LedgerManager.LedgerRecord? ContCreditor = null;
 
                 if (!Turi.ContainsKey(or.IdContDebitor))
                 {
@@ -165,18 +170,32 @@ namespace Ledger
                 } //FIXME: daca e sold initial
                 else
                 {
-                    ContDebitor.Debit.Rulaj.Add(or.Valoare);
-                    ContCreditor.Credit.Rulaj.Add(or.Valoare);
+                    //ContDebitor.Debit.Rulaj.Add(or.Valoare);
+                    //ContCreditor.Credit.Rulaj.Add(or.Valoare);
+                    ContDebitor.Debit.Rulaj.Add(or.Index, or.Valoare);
+                    ContCreditor.Credit.Rulaj.Add(or.Index, or.Valoare);
                 }
-
-                //if (rec.eContDebitor && false/* FIXME: E sold initial*/) rec.Debit.SoldInitial = or.Valoare;
-               // if (rec.eContDebitor && false/* FIXME: E sold initial*/) rec.Debit.SoldInitial = or.Valoare;
             }
 
 
+            
 
-            MessageBox.Show(Turi.Count().ToString());
-            MessageBox.Show(Turi[401].ToString());
+            LedgerManager.LedgerModel model = new LedgerManager.LedgerModel
+            {
+                Accounts = Turi.Values.ToList(),
+                OperationRecords = LedgerManager.OperationRecords.ToList()
+
+            };
+
+            
+            var document = DocumentFactory.Create("ledger.cs.docx", model);
+
+            document.Generate("ledger.docx");
+
+            MessageBox.Show("GATA GENERAREA");
+
+            //MessageBox.Show(Turi.Count().ToString());
+            //MessageBox.Show(Turi[401].ToString());
         }
     }
 }
