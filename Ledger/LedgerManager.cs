@@ -166,6 +166,66 @@ namespace Ledger
                 sb.AppendLine($"Sold Final {SoldFinal} de tip {TipSoldFinal}");
                 return sb.ToString();
             }
+
+
+        }
+
+        public static Dictionary<int, LedgerManager.LedgerRecord> ProcessLedgerRecords()
+        {
+            Dictionary<int, LedgerManager.LedgerRecord> Turi = new Dictionary<int, LedgerManager.LedgerRecord>();
+
+            foreach (LedgerManager.OperationRecord or in LedgerManager.OperationRecords)
+            {
+                LedgerManager.LedgerRecord? ContDebitor = null;
+                LedgerManager.LedgerRecord? ContCreditor = null;
+
+                if (!Turi.ContainsKey(or.IdContDebitor))
+                {
+                    ContDebitor = new LedgerManager.LedgerRecord()
+                    {
+                        IdCont = or.IdContDebitor,
+                        NumeCont = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContDebitor).Nume,
+                        eContDebitor = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContDebitor).Intrari == "C" ? true : false,
+                    };
+                    Turi.Add(or.IdContDebitor, ContDebitor);
+                }
+                else
+                {
+                    ContDebitor = Turi[or.IdContDebitor];
+                }
+
+                if (!Turi.ContainsKey(or.IdContCreditor))
+                {
+                    ContCreditor = new LedgerManager.LedgerRecord()
+                    {
+                        IdCont = or.IdContCreditor,
+                        NumeCont = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContCreditor).Nume,
+                        eContDebitor = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContCreditor).Intrari == "C" ? true : false,
+                    };
+                    Turi.Add(or.IdContCreditor, ContCreditor);
+                }
+                else
+                {
+                    ContCreditor = Turi[or.IdContCreditor];
+                }
+
+                //FIXME SA STIE AUTOMAT DACA SOLDUL INITIAL E DEBIT SAU CREDIT
+                if (or.IdContCreditor == 0 || or.IdContDebitor == 0) //Sold initial
+                {
+                    if (or.IdContDebitor != 0) ContDebitor.Debit.SoldInitial = or.Valoare;
+                    if (or.IdContCreditor != 0) ContCreditor.Credit.SoldInitial = or.Valoare;
+
+                } //FIXME: daca e sold initial
+                else
+                {
+                    //ContDebitor.Debit.Rulaj.Add(or.Valoare);
+                    //ContCreditor.Credit.Rulaj.Add(or.Valoare);
+                    ContDebitor.Debit.Rulaj.Add(or.Index, or.Valoare);
+                    ContCreditor.Credit.Rulaj.Add(or.Index, or.Valoare);
+                }
+            }
+
+            return Turi;
         }
     }
 }

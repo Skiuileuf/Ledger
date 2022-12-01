@@ -30,6 +30,7 @@ namespace Ledger
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@ namespace Ledger
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ledgerGridView)).BeginInit();
@@ -127,7 +129,8 @@ namespace Ledger
             this.debitCombo.Location = new System.Drawing.Point(3, 18);
             this.debitCombo.Name = "debitCombo";
             this.debitCombo.Size = new System.Drawing.Size(252, 23);
-            this.debitCombo.TabIndex = 3;
+            this.debitCombo.TabIndex = 0;
+            this.debitCombo.TextChanged += new System.EventHandler(this.debitCombo_TextChanged);
             // 
             // creditCombo
             // 
@@ -138,7 +141,7 @@ namespace Ledger
             this.creditCombo.Location = new System.Drawing.Point(261, 18);
             this.creditCombo.Name = "creditCombo";
             this.creditCombo.Size = new System.Drawing.Size(252, 23);
-            this.creditCombo.TabIndex = 4;
+            this.creditCombo.TabIndex = 1;
             // 
             // label4
             // 
@@ -164,7 +167,7 @@ namespace Ledger
             this.btnAppendLedger.Location = new System.Drawing.Point(519, 47);
             this.btnAppendLedger.Name = "btnAppendLedger";
             this.btnAppendLedger.Size = new System.Drawing.Size(254, 24);
-            this.btnAppendLedger.TabIndex = 8;
+            this.btnAppendLedger.TabIndex = 3;
             this.btnAppendLedger.Text = "Adauga la Ledger";
             this.btnAppendLedger.UseVisualStyleBackColor = true;
             this.btnAppendLedger.Click += new System.EventHandler(this.btnAppendLedger_Click);
@@ -175,7 +178,7 @@ namespace Ledger
             this.valueBox.Location = new System.Drawing.Point(519, 18);
             this.valueBox.Name = "valueBox";
             this.valueBox.Size = new System.Drawing.Size(254, 23);
-            this.valueBox.TabIndex = 9;
+            this.valueBox.TabIndex = 2;
             this.valueBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valueBox_KeyPress);
             // 
             // label6
@@ -197,7 +200,7 @@ namespace Ledger
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
-            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // newToolStripButton
@@ -244,7 +247,7 @@ namespace Ledger
             this.txtNotaOperatiei.Location = new System.Drawing.Point(127, 28);
             this.txtNotaOperatiei.Name = "txtNotaOperatiei";
             this.txtNotaOperatiei.Size = new System.Drawing.Size(661, 23);
-            this.txtNotaOperatiei.TabIndex = 3;
+            this.txtNotaOperatiei.TabIndex = 0;
             // 
             // label7
             // 
@@ -252,7 +255,7 @@ namespace Ledger
             this.label7.Location = new System.Drawing.Point(12, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 15);
-            this.label7.TabIndex = 4;
+            this.label7.TabIndex = 6;
             this.label7.Text = "Analiza Operatiei";
             // 
             // label8
@@ -279,7 +282,7 @@ namespace Ledger
             this.btnGenerateT.Location = new System.Drawing.Point(414, 463);
             this.btnGenerateT.Name = "btnGenerateT";
             this.btnGenerateT.Size = new System.Drawing.Size(184, 23);
-            this.btnGenerateT.TabIndex = 7;
+            this.btnGenerateT.TabIndex = 1;
             this.btnGenerateT.Text = "Genereaza T-uri";
             this.btnGenerateT.UseVisualStyleBackColor = true;
             this.btnGenerateT.Click += new System.EventHandler(this.btnGenerateT_Click);
@@ -289,9 +292,10 @@ namespace Ledger
             this.btnGenerateVerification.Location = new System.Drawing.Point(604, 463);
             this.btnGenerateVerification.Name = "btnGenerateVerification";
             this.btnGenerateVerification.Size = new System.Drawing.Size(184, 23);
-            this.btnGenerateVerification.TabIndex = 8;
+            this.btnGenerateVerification.TabIndex = 2;
             this.btnGenerateVerification.Text = "Genereaza Balanta de Verificare";
             this.btnGenerateVerification.UseVisualStyleBackColor = true;
+            this.btnGenerateVerification.Click += new System.EventHandler(this.btnGenerateVerification_Click);
             // 
             // comboBox1
             // 
@@ -304,6 +308,7 @@ namespace Ledger
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 9;
+            this.comboBox1.TabStop = false;
             // 
             // comboBox2
             // 
@@ -316,6 +321,7 @@ namespace Ledger
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 23);
             this.comboBox2.TabIndex = 10;
+            this.comboBox2.TabStop = false;
             // 
             // comboBox3
             // 
@@ -329,6 +335,7 @@ namespace Ledger
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 23);
             this.comboBox3.TabIndex = 11;
+            this.comboBox3.TabStop = false;
             // 
             // label9
             // 
@@ -351,6 +358,7 @@ namespace Ledger
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 23);
             this.comboBox4.TabIndex = 13;
+            this.comboBox4.TabStop = false;
             // 
             // label10
             // 
@@ -435,5 +443,6 @@ namespace Ledger
         private ComboBox comboBox4;
         private Label label10;
         private Label label11;
+        private Timer timer1;
     }
 }

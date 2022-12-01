@@ -14,8 +14,6 @@ namespace Ledger
             InitializeComponent();
         }
 
-        //BindingList<LedgerManager.LedgerRecord> LdgrRcrdsBindingList = new BindingList<LedgerManager.LedgerRecord>();
-
         private void Form1_Load(object sender, EventArgs e)
         {
             AccountsManager.LoadAccountsFromDisk();
@@ -32,12 +30,10 @@ namespace Ledger
 
         private void valueBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
-
             // only allow one decimal point
             if ((e.KeyChar == '.') && (((TextBox)sender).Text.IndexOf('.') > -1))
             {
@@ -57,11 +53,95 @@ namespace Ledger
             }
 
             ledgerGridView.DataSource = LedgerManager.OperationRecords;
+        }
 
-            //foreach(LedgerManager.LedgerRecord lr in LedgerManager.LedgerRecords)
-            //{
-            //    LdgrRcrdsBindingList.Add(lr);
-            //}
+        private bool _canUpdate = true;
+
+        private bool _needUpdate = false;
+
+        private ComboBox _comboBoxToUpdate;
+
+        //If text has been changed then start timer
+        //If the user doesn't change text while the timer runs then start search
+        private void autocompleteComboBox_TextChanged(object sender, EventArgs e)
+        {
+            if (_needUpdate)
+            {
+                if (_canUpdate)
+                {
+                    _canUpdate = false;
+                    _comboBoxToUpdate = (ComboBox)sender;
+                    UpdateData();
+                }
+                else
+                {
+                    RestartTimer();
+                }
+            }
+        }
+
+        private void UpdateData()
+        {
+            if (_comboBoxToUpdate.Text.Length > 1)
+            {
+                //List<string> searchData = Search.GetData(_comboBoxToUpdate.Text);
+                List<string> searchData = new List<string>();
+                AccountsManager.Accounts.ForEach(acc => searchData.Add($"{acc.Id} : {acc.Nume}"));
+                HandleTextChanged(searchData);
+            }
+        }
+
+        //If an item was selected don't start new search
+        private void combobox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _needUpdate = false;
+        }
+
+        //Update data only when the user (not program) change something
+        private void combobox1_TextUpdate(object sender, EventArgs e)
+        {
+            _needUpdate = true;
+        }
+
+        //While timer is running don't start search
+        //timer1.Interval = 1500;
+        private void RestartTimer()
+        {
+            timer1.Stop();
+            _canUpdate = false;
+            timer1.Start();
+        }
+
+        //Update data when timer stops
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            _canUpdate = true;
+            timer1.Stop();
+            UpdateData();
+        }
+
+        //Update combobox with new data
+        private void HandleTextChanged(List<string> dataSource)
+        {
+            var text = _comboBoxToUpdate.Text;
+
+            if (dataSource.Count() > 0)
+            {
+                _comboBoxToUpdate.DataSource = dataSource;
+
+                var sText = _comboBoxToUpdate.Items[0].ToString();
+                _comboBoxToUpdate.SelectionStart = text.Length;
+                _comboBoxToUpdate.SelectionLength = sText.Length - text.Length;
+                _comboBoxToUpdate.DroppedDown = true;
+
+
+                return;
+            }
+            else
+            {
+                _comboBoxToUpdate.DroppedDown = false;
+                _comboBoxToUpdate.SelectionStart = text.Length;
+            }
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
@@ -111,12 +191,14 @@ namespace Ledger
             debitCombo.SelectedIndex = 0;
             creditCombo.SelectedIndex = 0;
             valueBox.Text = "";
+
+            txtNotaOperatiei.Focus();
         }
 
         private void btnGenerateT_Click(object sender, EventArgs e)
         {
             //Gaseste toate conturile unice
-            //Pentru fiecare cont genereaza o foaie
+            //Pentru fiecare cont genereaza un tabel
 
             //Suma se adauga la contul debitor pe coloana debit
             //Suma se adauga la contul creditor pe coloana credit
@@ -127,75 +209,31 @@ namespace Ledger
             //Pentru validare - se aduna toate valorile credit cu toate valorile debit, daca sumele sunt diferite datele nu sunt valide (elementul lipsa are jumate din valoarea diferentei)
             //Se umple o foaie cu datele rezultate.
 
-            Dictionary<int, LedgerManager.LedgerRecord> Turi = new Dictionary<int, LedgerManager.LedgerRecord>();
-
-            foreach(LedgerManager.OperationRecord or in LedgerManager.OperationRecords)
-            {
-                LedgerManager.LedgerRecord? ContDebitor = null;
-                LedgerManager.LedgerRecord? ContCreditor = null;
-
-                if (!Turi.ContainsKey(or.IdContDebitor))
-                {
-                    ContDebitor = new LedgerManager.LedgerRecord() {
-                        IdCont = or.IdContDebitor,
-                        NumeCont = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContDebitor).Nume,
-                        eContDebitor = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContDebitor).Intrari == "C" ? true : false,
-                    };
-                    Turi.Add(or.IdContDebitor, ContDebitor);
-                } else
-                {
-                    ContDebitor = Turi[or.IdContDebitor];
-                }
-
-                if (!Turi.ContainsKey(or.IdContCreditor))
-                {
-                    ContCreditor = new LedgerManager.LedgerRecord()
-                    {
-                        IdCont = or.IdContCreditor,
-                        NumeCont = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContCreditor).Nume,
-                        eContDebitor = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContCreditor).Intrari == "C" ? true : false,
-                    };
-                    Turi.Add(or.IdContCreditor, ContCreditor);
-                } else
-                {
-                    ContCreditor = Turi[or.IdContCreditor];
-                }
-
-                //FIXME SA STIE AUTOMAT DACA SOLDUL INITIAL E DEBIT SAU CREDIT
-                if (or.IdContCreditor == 0 || or.IdContDebitor == 0) //Sold initial
-                {
-                    if (or.IdContDebitor != 0) ContDebitor.Debit.SoldInitial = or.Valoare;
-                    if (or.IdContCreditor != 0) ContCreditor.Credit.SoldInitial = or.Valoare;
-
-                } //FIXME: daca e sold initial
-                else
-                {
-                    //ContDebitor.Debit.Rulaj.Add(or.Valoare);
-                    //ContCreditor.Credit.Rulaj.Add(or.Valoare);
-                    ContDebitor.Debit.Rulaj.Add(or.Index, or.Valoare);
-                    ContCreditor.Credit.Rulaj.Add(or.Index, or.Valoare);
-                }
-            }
-
-
-            
-
+            Dictionary<int, LedgerManager.LedgerRecord> Conturi = LedgerManager.ProcessLedgerRecords();
             LedgerManager.LedgerModel model = new LedgerManager.LedgerModel
             {
-                Accounts = Turi.Values.ToList(),
+                Accounts = Conturi.Values.ToList(),
                 OperationRecords = LedgerManager.OperationRecords.ToList()
 
             };
 
-            
             var document = DocumentFactory.Create("ledger.cs.docx", model);
-
             document.Generate("ledger.docx");
-
             MessageBox.Show("GATA GENERAREA");
 
-            //MessageBox.Show(Turi.Count().ToString());
-            //MessageBox.Show(Turi[401].ToString());
+        }
+
+        private void btnGenerateVerification_Click(object sender, EventArgs e)
+        {
+            Dictionary<int, LedgerManager.LedgerRecord> Conturi = LedgerManager.ProcessLedgerRecords();
+            var document = DocumentFactory.Create("balanta-verificare.cs.docx", Conturi.Values.ToList());
+            document.Generate("balanta-verificare.docx");
+            MessageBox.Show("GATA GENERAREA");
+        }
+
+        private void debitCombo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

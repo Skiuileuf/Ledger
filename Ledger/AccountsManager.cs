@@ -34,5 +34,12 @@ namespace Ledger
                 Accounts.Insert(0, new Account() { Id = 0, Nume = "Sold Initial" });
             }
         }
+
+        public static string AccountNameFromId(int id)
+        {
+            return Accounts.Find(a => a.Id == id).Nume;
+        }
+
+        
     }
 }
