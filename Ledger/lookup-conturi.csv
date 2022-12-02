@@ -347,232 +347,232 @@
 491, Ajustări pentru deprecierea creanţelor - clienţi,Creante+DTS,AC,AjDepr,,
 495, Ajustări pentru deprecierea creanţelor - decontări în cadrul grupului şi cu acţionarii/asociaţii,Creante+DTS,AC,AjDepr,,
 496, Ajustări pentru deprecierea creanţelor - debitori diverşi,Creante+DTS,AC,AjDepr,,
-50, Investiţii pe termen scurt,InvFinTS+CasaSiConturi,AC,,,
-501, Acţiuni deţinute la entităţile afiliate,InvFinTS+CasaSiConturi,AC,,,
-505, Obligaţiuni emise şi răscumpărate,InvFinTS+CasaSiConturi,AC,,,
-506, Obligaţiuni,InvFinTS+CasaSiConturi,AC,,,
-507, Certificate verzi primite,InvFinTS+CasaSiConturi,AC,,,
-508, Alte investiţii pe termen scurt şi creanţe asimilate,InvFinTS+CasaSiConturi,AC,,,
-5081, Alte titluri de plasament,InvFinTS+CasaSiConturi,AC,,,
-5088, Dobânzi la obligaţiuni şi titluri de plasament,InvFinTS+CasaSiConturi,AC,,,
-509, Vărsăminte de efectuat pentru investiţiile pe termen scurt,InvFinTS+CasaSiConturi,AC,,,
-5091, Vărsăminte de efectuat pentru acţiunile deţinute la entităţile afiliate,InvFinTS+CasaSiConturi,AC,,,
-5092, Vărsăminte de efectuat pentru alte investiţii pe termen scurt,InvFinTS+CasaSiConturi,AC,,,
-51, Conturi la bănci,InvFinTS+CasaSiConturi,AC,,,
-511, Valori de încasat,InvFinTS+CasaSiConturi,AC,,,
-5112, Cecuri de încasat,InvFinTS+CasaSiConturi,AC,,,
-5113, Efecte de încasat,InvFinTS+CasaSiConturi,AC,,,
-5114, Efecte remise spre scontare,InvFinTS+CasaSiConturi,AC,,,
-512, Conturi curente la bănci,InvFinTS+CasaSiConturi,AC,,,
-5121, Conturi la bănci în lei,InvFinTS+CasaSiConturi,AC,,,
-5124, Conturi la bănci în valută,InvFinTS+CasaSiConturi,AC,,,
-5125, Sume în curs de decontare,InvFinTS+CasaSiConturi,AC,,,
-5126, Conturi la bănci în lei - TVA defalcat,InvFinTS+CasaSiConturi,AC,,,
-5127, Conturi la bănci în valută - TVA defalcat,InvFinTS+CasaSiConturi,AC,,,
-518, Dobânzi,InvFinTS+CasaSiConturi,AC,,,
-5186, Dobânzi de plătit,InvFinTS+CasaSiConturi,AC,,,
-5187, Dobânzi de încasat,InvFinTS+CasaSiConturi,AC,,,
-519, Credite bancare pe termen scurt,InvFinTS+CasaSiConturi,AC,,,
-5191, Credite bancare pe termen scurt,InvFinTS+CasaSiConturi,AC,,,
-5192, Credite bancare pe termen scurt nerambursate la scadenţă,InvFinTS+CasaSiConturi,AC,,,
-5193, Credite externe guvernamentale,InvFinTS+CasaSiConturi,AC,,,
-5194, Credite externe garantate de stat,InvFinTS+CasaSiConturi,AC,,,
-5195, Credite externe garantate de bănci,InvFinTS+CasaSiConturi,AC,,,
-5196, Credite de la Trezoreria Statului,InvFinTS+CasaSiConturi,AC,,,
-5197, Credite interne garantate de stat,InvFinTS+CasaSiConturi,AC,,,
-5198, Dobânzi aferente creditelor bancare pe termen scurt,InvFinTS+CasaSiConturi,AC,,,
-53, Casa,InvFinTS+CasaSiConturi,AC,,,
-531, Casa,InvFinTS+CasaSiConturi,AC,,,
-5311, Casa în lei,InvFinTS+CasaSiConturi,AC,,,
-5314, Casa în valută,InvFinTS+CasaSiConturi,AC,,,
-532, Alte valori,InvFinTS+CasaSiConturi,AC,,,
-5321, Timbre fiscale şi poştale,InvFinTS+CasaSiConturi,AC,,,
-5322, Bilete de tratament şi odihnă,InvFinTS+CasaSiConturi,AC,,,
-5323, Tichete şi bilete de călătorie,InvFinTS+CasaSiConturi,AC,,,
-5328, Alte valori,InvFinTS+CasaSiConturi,AC,,,
-54, Acreditive,InvFinTS+CasaSiConturi,AC,,,
-541, Acreditive,InvFinTS+CasaSiConturi,AC,,,
-5411, Acreditive în lei,InvFinTS+CasaSiConturi,AC,,,
-5414, Acreditive în valută,InvFinTS+CasaSiConturi,AC,,,
-542, Avansuri de trezorerie,InvFinTS+CasaSiConturi,AC,,,
-58, Viramente interne,InvFinTS+CasaSiConturi,AC,,,
-581, Viramente interne,InvFinTS+CasaSiConturi,AC,,,
-59, Ajustări pentru pierderea de valoare a conturilor de trezorerie,InvFinTS+CasaSiConturi,AC,AjDepr,,
-591, Ajustări pentru pierderea de valoare a acţiunilor deţinute la entităţile afiliate,InvFinTS+CasaSiConturi,AC,AjDepr,,
-595, Ajustări pentru pierderea de valoare a obligaţiunilor emise şi răscumpărate,InvFinTS+CasaSiConturi,AC,AjDepr,,
-596, Ajustări pentru pierderea de valoare a obligaţiunilor,InvFinTS+CasaSiConturi,AC,AjDepr,,
-598, Ajustări pentru pierderea de valoare a altor investiţii pe termen scurt şi creanţe asimilate,InvFinTS+CasaSiConturi,AC,AjDepr,,
-60, Cheltuieli privind stocurile,Cheltuieli,CPrPd,ChEx,,
-601, Cheltuieli cu materiile prime,Cheltuieli,CPrPd,ChEx,,
-602, Cheltuieli cu materialele consumabile,Cheltuieli,CPrPd,ChEx,,
-6021, Cheltuieli cu materialele auxiliare,Cheltuieli,CPrPd,ChEx,,
-6022, Cheltuieli privind combustibilii,Cheltuieli,CPrPd,ChEx,,
-6023, Cheltuieli privind materialele pentru ambalat,Cheltuieli,CPrPd,ChEx,,
-6024, Cheltuieli privind piesele de schimb,Cheltuieli,CPrPd,ChEx,,
-6025, Cheltuieli privind seminţele şi materialele de plantat,Cheltuieli,CPrPd,ChEx,,
-6026, Cheltuieli privind furajele,Cheltuieli,CPrPd,ChEx,,
-6028, Cheltuieli privind alte materiale consumabile,Cheltuieli,CPrPd,ChEx,,
-603, Cheltuieli privind materialele de natura obiectelor de inventar,Cheltuieli,CPrPd,ChEx,,
-604, Cheltuieli privind materialele nestocate,Cheltuieli,CPrPd,ChEx,,
-605, Cheltuieli cu energia si apa,Cheltuieli,CPrPd,ChEx,,
-6051, Cheltuieli privind consumul de energie,Cheltuieli,CPrPd,ChEx,,
-6052, Cheltuieli privind consumul de apa,Cheltuieli,CPrPd,ChEx,,
-606, Cheltuieli privind activele biologice de natura stocurilor,Cheltuieli,CPrPd,ChEx,,
-607, Cheltuieli privind mărfurile,Cheltuieli,CPrPd,ChEx,,
-608, Cheltuieli privind ambalajele,Cheltuieli,CPrPd,ChEx,,
-609, Reduceri comerciale primite,Cheltuieli,CPrPd,ChEx,,
-61, Cheltuieli cu serviciile executate de terţi,Cheltuieli,CPrPd,ChEx,,
-611, Cheltuieli cu întreţinerea şi reparaţiile,Cheltuieli,CPrPd,ChEx,,
-612," Cheltuieli cu redevenţele, locaţiile de gestiune şi chiriile",Cheltuieli,CPrPd,ChEx,,
-613, Cheltuieli cu primele de asigurare,Cheltuieli,CPrPd,ChEx,,
-614, Cheltuieli cu studiile şi cercetările,Cheltuieli,CPrPd,ChEx,,
-615, Cheltuieli cu pregătirea personalului,Cheltuieli,CPrPd,ChEx,,
-62, Cheltuieli cu alte servicii executate de terţi,Cheltuieli,CPrPd,ChEx,,
-621, Cheltuieli cu colaboratorii,Cheltuieli,CPrPd,ChEx,,
-622, Cheltuieli privind comisioanele şi onorariile,Cheltuieli,CPrPd,ChEx,,
-623," Cheltuieli de protocol, reclamă şi publicitate",Cheltuieli,CPrPd,ChEx,,
-6231, Cheltuieli de protocol,Cheltuieli,CPrPd,ChEx,,
-6232, Cheltuieli de reclamă şi publicitate,Cheltuieli,CPrPd,ChEx,,
-624, Cheltuieli cu transportul de bunuri şi personal,Cheltuieli,CPrPd,ChEx,,
-625," Cheltuieli cu deplasări, detaşări şi transferări",Cheltuieli,CPrPd,ChEx,,
-626, Cheltuieli poştale şi taxe de telecomunicaţii,Cheltuieli,CPrPd,ChEx,,
-627, Cheltuieli cu serviciile bancare şi asimilate,Cheltuieli,CPrPd,ChEx,,
-628, Alte cheltuieli cu serviciile executate de terţi,Cheltuieli,CPrPd,ChEx,,
-63," Cheltuieli cu alte impozite, taxe şi vărsăminte asimilate",Cheltuieli,CPrPd,ChEx,,
-635," Cheltuieli cu alte impozite, taxe şi vărsăminte asimilate",Cheltuieli,CPrPd,ChEx,,
-64, Cheltuieli cu personalul,Cheltuieli,CPrPd,ChEx,,
-641, Cheltuieli cu salariile personalului,Cheltuieli,CPrPd,ChEx,,
-642, Cheltuieli cu avantajele în natură şi tichetele acordate salariaţilor,Cheltuieli,CPrPd,ChEx,,
-6421, Cheltuieli cu avantajele în natură acordate salariaţilor,Cheltuieli,CPrPd,ChEx,,
-6422, Cheltuieli cu tichetele acordate salariaţilor,Cheltuieli,CPrPd,ChEx,,
-643, Cheltuieli cu remunerarea în instrumente de capitaluri proprii,Cheltuieli,CPrPd,ChEx,,
-644, Cheltuieli cu primele reprezentând participarea personalului la profit,Cheltuieli,CPrPd,ChEx,,
-645, Cheltuieli privind asigurările şi protecţia socială,Cheltuieli,CPrPd,ChEx,,
-6451, Cheltuieli privind contribuţia unităţii la asigurările sociale,Cheltuieli,CPrPd,ChEx,,
-6452, Cheltuieli privind contribuţia unităţii pentru ajutorul de şomaj,Cheltuieli,CPrPd,ChEx,,
-6453, Cheltuieli privind contribuţia angajatorului pentru asigurările sociale de sănătate,Cheltuieli,CPrPd,ChEx,,
-6455, Cheltuieli privind contribuţia unităţii la asigurările de viaţă,Cheltuieli,CPrPd,ChEx,,
-6456, Cheltuieli privind contribuţia unităţii la fondurile de pensii facultative,Cheltuieli,CPrPd,ChEx,,
-6457, Cheltuieli privind contribuţia unităţii la primele de asigurare voluntară de sănătate,Cheltuieli,CPrPd,ChEx,,
-6458, Alte cheltuieli privind asigurările şi protecţia socială,Cheltuieli,CPrPd,ChEx,,
-646, Cheltuieli privind contribuția asiguratorie pentru muncă ,Cheltuieli,CPrPd,ChEx,,
-6461, Cheltuieli privind contribuția asiguratorie pentru muncă pentru munca corespunzatoare salariatilor,Cheltuieli,CPrPd,ChEx,,
-6462," Cheltuieli privind contribuția asiguratorie pentru muncă pentru munca corespunzatoare altor persoane, decat salariatii",Cheltuieli,CPrPd,ChEx,,
-65, Alte cheltuieli de exploatare,Cheltuieli,CPrPd,ChEx,,
-651, Cheltuieli din operaţiuni de fiducie,Cheltuieli,CPrPd,ChEx,,
-6511, Cheltuieli ocazionate de constituirea fiduciei,Cheltuieli,CPrPd,ChEx,,
-6512, Cheltuieli din derularea operaţiunilor de fiducie,Cheltuieli,CPrPd,ChEx,,
-6513, Cheltuieli din lichidarea operaţiunilor de fiducie,Cheltuieli,CPrPd,ChEx,,
-652, Cheltuieli cu protecţia mediului înconjurător,Cheltuieli,CPrPd,ChEx,,
-654, Pierderi din creanţe şi debitori diverşi,Cheltuieli,CPrPd,ChEx,,
-655, Cheltuieli din reevaluarea imobilizărilor corporale,Cheltuieli,CPrPd,ChEx,,
-658, Alte cheltuieli de exploatare,Cheltuieli,CPrPd,ChEx,,
-6581," Despăgubiri, amenzi şi penalităţi",Cheltuieli,CPrPd,ChEx,,
-6582, Donaţii acordate,Cheltuieli,CPrPd,ChEx,,
-6583, Cheltuieli privind activele cedate şi alte operaţiuni de capital,Cheltuieli,CPrPd,ChEx,,
-6584,Cheltuieli cu sumele sau bunurile acordate ca sponsorizări  ,Cheltuieli,CPrPd,ChEx,,
-6586, Cheltuieli reprezentând transferuri şi contribuţii datorate în baza unor acte normative speciale,Cheltuieli,CPrPd,ChEx,,
-6587, Cheltuieli privind calamităţile şi alte evenimente similare,Cheltuieli,CPrPd,ChEx,,
-6588, Alte cheltuieli de exploatare,Cheltuieli,CPrPd,ChEx,,
-66, Cheltuieli financiare,Cheltuieli,CPrPd,ChFin,,
-663, Pierderi din creanţe legate de participaţii,Cheltuieli,CPrPd,ChFin,,
-664, Cheltuieli privind investiţiile financiare cedate,Cheltuieli,CPrPd,ChFin,,
-6641, Cheltuieli privind imobilizările financiare cedate,Cheltuieli,CPrPd,ChFin,,
-6642, Pierderi din investiţiile pe termen scurt cedate,Cheltuieli,CPrPd,ChFin,,
-665, Cheltuieli din diferenţe de curs valutar,Cheltuieli,CPrPd,ChFin,,
-6651, Diferenţe nefavorabile de curs valutar legate de elementele monetare exprimate în valută,Cheltuieli,CPrPd,ChFin,,
-6652, Diferenţe nefavorabile de curs valutar din evaluarea elementelor monetare care fac parte din investiţia netă într-o entitate străină,Cheltuieli,CPrPd,ChFin,,
-666, Cheltuieli privind dobânzile,Cheltuieli,CPrPd,ChFin,,
-667, Cheltuieli privind sconturile acordate,Cheltuieli,CPrPd,ChFin,,
-668, Alte cheltuieli financiare,Cheltuieli,CPrPd,ChFin,,
-68," Cheltuieli cu amortizările, provizioanele şi ajustările pentru depreciere sau pierdere de valoare",Cheltuieli,CPrPd,ChFin,,
-681," Cheltuieli de exploatare privind amortizările, provizioanele şi ajustările pentru depreciere",Cheltuieli,CPrPd,ChFin,,
-6811, Cheltuieli de exploatare privind amortizarea imobilizărilor,Cheltuieli,CPrPd,ChFin,,
-6812, Cheltuieli de exploatare privind provizioanele,Cheltuieli,CPrPd,ChFin,,
-6813, Cheltuieli de exploatare privind ajustările pentru deprecierea imobilizărilor,Cheltuieli,CPrPd,ChFin,,
-6814, Cheltuieli de exploatare privind ajustările pentru deprecierea activelor circulante,Cheltuieli,CPrPd,ChFin,,
-6817, Cheltuieli de exploatare privind ajustările pentru deprecierea fondului comercial,Cheltuieli,CPrPd,ChFin,,
-686," Cheltuieli financiare privind amortizările, provizioanele şi ajustările pentru pierdere de valoare",Cheltuieli,CPrPd,ChFin,,
-6861, Cheltuieli privind actualizarea provizioanelor,Cheltuieli,CPrPd,ChFin,,
-6863, Cheltuieli financiare privind ajustările pentru pierderea de valoare a imobilizărilor financiare,Cheltuieli,CPrPd,ChFin,,
-6864, Cheltuieli financiare privind ajustările pentru pierderea de valoare a activelor circulante,Cheltuieli,CPrPd,ChFin,,
-6865, Cheltuieli financiare privind amortizarea diferenţelor aferente titlurilor de stat,Cheltuieli,CPrPd,ChFin,,
-6868, Cheltuieli financiare privind amortizarea primelor de rambursare a obligaţiunilor şi a altor datorii,Cheltuieli,CPrPd,ChFin,,
-69, Cheltuieli cu impozitul pe profit şi alte impozite,Cheltuieli,CPrPd,ChFin,,
-691, Cheltuieli cu impozitul pe profit,Cheltuieli,CPrPd,ChFin,,
-695, Cheltuieli cu impozitul specific unor activităţi,Cheltuieli,CPrPd,ChFin,,
-698, Cheltuieli cu impozitul pe venit şi cu alte impozite care nu apar în elementele de mai sus,Cheltuieli,CPrPd,ChFin,,
-70, Cifra de afaceri netă,Venituri,CPrPd,VenEx,,
-701," Venituri din vânzarea produselor finite, produselor agricole şi a activelor biologice de natura stocurilor",Venituri,CPrPd,VenEx,,
-7015, Venituri din vânzarea produselor finite,Venituri,CPrPd,VenEx,,
-7017, Venituri din vânzarea produselor agricole,Venituri,CPrPd,VenEx,,
-7018, Venituri din vânzarea activelor biologice de natura stocurilor,Venituri,CPrPd,VenEx,,
-702, Venituri din vânzarea semifabricatelor,Venituri,CPrPd,VenEx,,
-703, Venituri din vânzarea produselor reziduale,Venituri,CPrPd,VenEx,,
-704, Venituri din servicii prestate,Venituri,CPrPd,VenEx,,
-705, Venituri din studii şi cercetări,Venituri,CPrPd,VenEx,,
-706," Venituri din redevenţe, locaţii de gestiune şi chirii",Venituri,CPrPd,VenEx,,
-707, Venituri din vânzarea mărfurilor,Venituri,CPrPd,VenEx,,
-708, Venituri din activităţi diverse,Venituri,CPrPd,VenEx,,
-709, Reduceri comerciale acordate,Venituri,CPrPd,VenEx,,
-71, Venituri aferente costului producţiei în curs de execuţie,Venituri,CPrPd,VenEx,,
-711, Venituri aferente costurilor stocurilor de produse,Venituri,CPrPd,VenEx,,
-712, Venituri aferente costurilor serviciilor în curs de execuţie,Venituri,CPrPd,VenEx,,
-72, Venituri din producţia de imobilizări,Venituri,CPrPd,VenEx,,
-721, Venituri din producţia de imobilizări necorporale,Venituri,CPrPd,VenEx,,
-722, Venituri din producţia de imobilizări corporale,Venituri,CPrPd,VenEx,,
-725, Venituri din producţia de investiţii imobiliare,Venituri,CPrPd,VenEx,,
-74, Venituri din subvenţii de exploatare,Venituri,CPrPd,VenEx,,
-741, Venituri din subvenţii de exploatare,Venituri,CPrPd,VenEx,,
-7411, Venituri din subvenţii de exploatare aferente cifrei de afaceri,Venituri,CPrPd,VenEx,,
-7412, Venituri din subvenţii de exploatare pentru materii prime şi materiale,Venituri,CPrPd,VenEx,,
-7413, Venituri din subvenţii de exploatare pentru alte cheltuieli externe,Venituri,CPrPd,VenEx,,
-7414, Venituri din subvenţii de exploatare pentru plata personalului,Venituri,CPrPd,VenEx,,
-7415, Venituri din subvenţii de exploatare pentru asigurări şi protecţie socială,Venituri,CPrPd,VenEx,,
-7416, Venituri din subvenţii de exploatare pentru alte cheltuieli de exploatare,Venituri,CPrPd,VenEx,,
-7417, Venituri din subvenţii de exploatare în caz de calamităţi şi alte evenimente similare,Venituri,CPrPd,VenEx,,
-7418, Venituri din subvenţii de exploatare pentru dobânda datorată,Venituri,CPrPd,VenEx,,
-7419, Venituri din subvenţii de exploatare aferente altor venituri,Venituri,CPrPd,VenEx,,
-75, Alte venituri din exploatare,Venituri,CPrPd,VenEx,,
-751, Venituri din operaţiuni de fiducie,Venituri,CPrPd,VenEx,,
-7511, Venituri ocazionate de constituirea fiduciei,Venituri,CPrPd,VenEx,,
-7512, Venituri din derularea operaţiunilor de fiducie,Venituri,CPrPd,VenEx,,
-7513, Venituri din lichidarea operaţiunilor de fiducie,Venituri,CPrPd,VenEx,,
-754, Venituri din creanţe reactivate şi debitori diverşi,Venituri,CPrPd,VenEx,,
-755, Venituri din reevaluarea imobilizărilor corporale,Venituri,CPrPd,VenEx,,
-758, Alte venituri din exploatare,Venituri,CPrPd,VenEx,,
-7581," Venituri din despăgubiri, amenzi şi penalităţi",Venituri,CPrPd,VenEx,,
-7582, Venituri din donaţii primite,Venituri,CPrPd,VenEx,,
-7583, Venituri din vânzarea activelor şi alte operaţiuni de capital,Venituri,CPrPd,VenEx,,
-7584, Venituri din subvenţii pentru investiţii,Venituri,CPrPd,VenEx,,
-7586, Venituri reprezentând transferuri cuvenite în baza unor acte normative speciale,Venituri,CPrPd,VenEx,,
-7588, Alte venituri din exploatare,Venituri,CPrPd,VenEx,,
-76, Venituri financiare,Venituri,CPrPd,VenFin,,
-761, Venituri din imobilizări financiare,Venituri,CPrPd,VenFin,,
-7611, Venituri din acţiuni deţinute la entităţile afiliate,Venituri,CPrPd,VenFin,,
-7612, Venituri din acţiuni deţinute la entităţi asociate,Venituri,CPrPd,VenFin,,
-7613, Venituri din acţiuni deţinute la entităţi controlate în comun,Venituri,CPrPd,VenFin,,
-7615, Venituri din alte imobilizări financiare,Venituri,CPrPd,VenFin,,
-762, Venituri din investiţii financiare pe termen scurt,Venituri,CPrPd,VenFin,,
-764, Venituri din investiţii financiare cedate,Venituri,CPrPd,VenFin,,
-7641, Venituri din imobilizări financiare cedate,Venituri,CPrPd,VenFin,,
-7642, Câştiguri din investiţii pe termen scurt cedate,Venituri,CPrPd,VenFin,,
-765, Venituri din diferenţe de curs valutar,Venituri,CPrPd,VenFin,,
-7651, Diferenţe favorabile de curs valutar legate de elementele monetare exprimate în valută,Venituri,CPrPd,VenFin,,
-7652, Diferenţe favorabile de curs valutar din evaluarea elementelor monetare care fac parte din investiţia netă într-o entitate străină,Venituri,CPrPd,VenFin,,
-766, Venituri din dobânzi,Venituri,CPrPd,VenFin,,
-767, Venituri din sconturi obţinute,Venituri,CPrPd,VenFin,,
-768, Alte venituri financiare,Venituri,CPrPd,VenFin,,
-78," Venituri din provizioane, amortizări şi ajustări pentru depreciere sau pierdere de valoare",Venituri,CPrPd,VenFin,,
-781, Venituri din provizioane şi ajustări pentru depreciere privind activitatea de exploatare,Venituri,CPrPd,VenFin,,
-7812, Venituri din provizioane,Venituri,CPrPd,VenFin,,
-7813, Venituri din ajustări pentru deprecierea imobilizărilor,Venituri,CPrPd,VenFin,,
-7814, Venituri din ajustări pentru deprecierea activelor circulante,Venituri,CPrPd,VenFin,,
-7815, Venituri din fondul comercial negativ,Venituri,CPrPd,VenFin,,
-786, Venituri financiare din amortizări şi ajustări pentru pierdere de valoare,Venituri,CPrPd,VenFin,,
-7863, Venituri financiare din ajustări pentru pierderea de valoare a imobilizărilor financiare,Venituri,CPrPd,VenFin,,
-7864, Venituri financiare din ajustări pentru pierderea de valoare a activelor circulante,Venituri,CPrPd,VenFin,,
-7865, Venituri financiare din amortizarea diferenţelor aferente titlurilor de stat,Venituri,CPrPd,VenFin,,
+50, Investiţii pe termen scurt,InvFinTS+CasaSiConturi,AC,,,B3
+501, Acţiuni deţinute la entităţile afiliate,InvFinTS+CasaSiConturi,AC,,,B3
+505, Obligaţiuni emise şi răscumpărate,InvFinTS+CasaSiConturi,AC,,,B3
+506, Obligaţiuni,InvFinTS+CasaSiConturi,AC,,,B3
+507, Certificate verzi primite,InvFinTS+CasaSiConturi,AC,,,B3
+508, Alte investiţii pe termen scurt şi creanţe asimilate,InvFinTS+CasaSiConturi,AC,,,B3
+5081, Alte titluri de plasament,InvFinTS+CasaSiConturi,AC,,,B3
+5088, Dobânzi la obligaţiuni şi titluri de plasament,InvFinTS+CasaSiConturi,AC,,,B3
+509, Vărsăminte de efectuat pentru investiţiile pe termen scurt,InvFinTS+CasaSiConturi,AC,,,B3
+5091, Vărsăminte de efectuat pentru acţiunile deţinute la entităţile afiliate,InvFinTS+CasaSiConturi,AC,,,B3
+5092, Vărsăminte de efectuat pentru alte investiţii pe termen scurt,InvFinTS+CasaSiConturi,AC,,,B3
+51, Conturi la bănci,InvFinTS+CasaSiConturi,AC,,,B4
+511, Valori de încasat,InvFinTS+CasaSiConturi,AC,,,B4
+5112, Cecuri de încasat,InvFinTS+CasaSiConturi,AC,,,B4
+5113, Efecte de încasat,InvFinTS+CasaSiConturi,AC,,,B4
+5114, Efecte remise spre scontare,InvFinTS+CasaSiConturi,AC,,,B4
+512, Conturi curente la bănci,InvFinTS+CasaSiConturi,AC,,,B4
+5121, Conturi la bănci în lei,InvFinTS+CasaSiConturi,AC,,,B4
+5124, Conturi la bănci în valută,InvFinTS+CasaSiConturi,AC,,,B4
+5125, Sume în curs de decontare,InvFinTS+CasaSiConturi,AC,,,B4
+5126, Conturi la bănci în lei - TVA defalcat,InvFinTS+CasaSiConturi,AC,,,B4
+5127, Conturi la bănci în valută - TVA defalcat,InvFinTS+CasaSiConturi,AC,,,B4
+518, Dobânzi,InvFinTS+CasaSiConturi,AC,,,B4
+5186, Dobânzi de plătit,InvFinTS+CasaSiConturi,AC,,,B4
+5187, Dobânzi de încasat,InvFinTS+CasaSiConturi,AC,,,B4
+519, Credite bancare pe termen scurt,InvFinTS+CasaSiConturi,AC,,,B4
+5191, Credite bancare pe termen scurt,InvFinTS+CasaSiConturi,AC,,,B4
+5192, Credite bancare pe termen scurt nerambursate la scadenţă,InvFinTS+CasaSiConturi,AC,,,B4
+5193, Credite externe guvernamentale,InvFinTS+CasaSiConturi,AC,,,B4
+5194, Credite externe garantate de stat,InvFinTS+CasaSiConturi,AC,,,B4
+5195, Credite externe garantate de bănci,InvFinTS+CasaSiConturi,AC,,,B4
+5196, Credite de la Trezoreria Statului,InvFinTS+CasaSiConturi,AC,,,B4
+5197, Credite interne garantate de stat,InvFinTS+CasaSiConturi,AC,,,B4
+5198, Dobânzi aferente creditelor bancare pe termen scurt,InvFinTS+CasaSiConturi,AC,,,B4
+53, Casa,InvFinTS+CasaSiConturi,AC,,,B4
+531, Casa,InvFinTS+CasaSiConturi,AC,,,B4
+5311, Casa în lei,InvFinTS+CasaSiConturi,AC,,,B4
+5314, Casa în valută,InvFinTS+CasaSiConturi,AC,,,B4
+532, Alte valori,InvFinTS+CasaSiConturi,AC,,,B4
+5321, Timbre fiscale şi poştale,InvFinTS+CasaSiConturi,AC,,,B4
+5322, Bilete de tratament şi odihnă,InvFinTS+CasaSiConturi,AC,,,B4
+5323, Tichete şi bilete de călătorie,InvFinTS+CasaSiConturi,AC,,,B4
+5328, Alte valori,InvFinTS+CasaSiConturi,AC,,,B4
+54, Acreditive,InvFinTS+CasaSiConturi,AC,,,B4
+541, Acreditive,InvFinTS+CasaSiConturi,AC,,,B4
+5411, Acreditive în lei,InvFinTS+CasaSiConturi,AC,,,B4
+5414, Acreditive în valută,InvFinTS+CasaSiConturi,AC,,,B4
+542, Avansuri de trezorerie,InvFinTS+CasaSiConturi,AC,,,B4
+58, Viramente interne,InvFinTS+CasaSiConturi,AC,,,B4
+581, Viramente interne,InvFinTS+CasaSiConturi,AC,,,B4
+59, Ajustări pentru pierderea de valoare a conturilor de trezorerie,InvFinTS+CasaSiConturi,AC,AjDepr,,B4
+591, Ajustări pentru pierderea de valoare a acţiunilor deţinute la entităţile afiliate,InvFinTS+CasaSiConturi,AC,AjDepr,,B4
+595, Ajustări pentru pierderea de valoare a obligaţiunilor emise şi răscumpărate,InvFinTS+CasaSiConturi,AC,AjDepr,,B4
+596, Ajustări pentru pierderea de valoare a obligaţiunilor,InvFinTS+CasaSiConturi,AC,AjDepr,,B4
+598, Ajustări pentru pierderea de valoare a altor investiţii pe termen scurt şi creanţe asimilate,InvFinTS+CasaSiConturi,AC,AjDepr,,B4
+60, Cheltuieli privind stocurile,Cheltuieli,CPrPd,ChEx,,2
+601, Cheltuieli cu materiile prime,Cheltuieli,CPrPd,ChEx,,2
+602, Cheltuieli cu materialele consumabile,Cheltuieli,CPrPd,ChEx,,2
+6021, Cheltuieli cu materialele auxiliare,Cheltuieli,CPrPd,ChEx,,2
+6022, Cheltuieli privind combustibilii,Cheltuieli,CPrPd,ChEx,,2
+6023, Cheltuieli privind materialele pentru ambalat,Cheltuieli,CPrPd,ChEx,,2
+6024, Cheltuieli privind piesele de schimb,Cheltuieli,CPrPd,ChEx,,2
+6025, Cheltuieli privind seminţele şi materialele de plantat,Cheltuieli,CPrPd,ChEx,,2
+6026, Cheltuieli privind furajele,Cheltuieli,CPrPd,ChEx,,2
+6028, Cheltuieli privind alte materiale consumabile,Cheltuieli,CPrPd,ChEx,,2
+603, Cheltuieli privind materialele de natura obiectelor de inventar,Cheltuieli,CPrPd,ChEx,,2
+604, Cheltuieli privind materialele nestocate,Cheltuieli,CPrPd,ChEx,,2
+605, Cheltuieli cu energia si apa,Cheltuieli,CPrPd,ChEx,,2
+6051, Cheltuieli privind consumul de energie,Cheltuieli,CPrPd,ChEx,,2
+6052, Cheltuieli privind consumul de apa,Cheltuieli,CPrPd,ChEx,,2
+606, Cheltuieli privind activele biologice de natura stocurilor,Cheltuieli,CPrPd,ChEx,,2
+607, Cheltuieli privind mărfurile,Cheltuieli,CPrPd,ChEx,,2
+608, Cheltuieli privind ambalajele,Cheltuieli,CPrPd,ChEx,,2
+609, Reduceri comerciale primite,Cheltuieli,CPrPd,ChEx,,2
+61, Cheltuieli cu serviciile executate de terţi,Cheltuieli,CPrPd,ChEx,,2
+611, Cheltuieli cu întreţinerea şi reparaţiile,Cheltuieli,CPrPd,ChEx,,2
+612," Cheltuieli cu redevenţele, locaţiile de gestiune şi chiriile",Cheltuieli,CPrPd,ChEx,,2
+613, Cheltuieli cu primele de asigurare,Cheltuieli,CPrPd,ChEx,,2
+614, Cheltuieli cu studiile şi cercetările,Cheltuieli,CPrPd,ChEx,,2
+615, Cheltuieli cu pregătirea personalului,Cheltuieli,CPrPd,ChEx,,2
+62, Cheltuieli cu alte servicii executate de terţi,Cheltuieli,CPrPd,ChEx,,2
+621, Cheltuieli cu colaboratorii,Cheltuieli,CPrPd,ChEx,,2
+622, Cheltuieli privind comisioanele şi onorariile,Cheltuieli,CPrPd,ChEx,,2
+623," Cheltuieli de protocol, reclamă şi publicitate",Cheltuieli,CPrPd,ChEx,,2
+6231, Cheltuieli de protocol,Cheltuieli,CPrPd,ChEx,,2
+6232, Cheltuieli de reclamă şi publicitate,Cheltuieli,CPrPd,ChEx,,2
+624, Cheltuieli cu transportul de bunuri şi personal,Cheltuieli,CPrPd,ChEx,,2
+625," Cheltuieli cu deplasări, detaşări şi transferări",Cheltuieli,CPrPd,ChEx,,2
+626, Cheltuieli poştale şi taxe de telecomunicaţii,Cheltuieli,CPrPd,ChEx,,2
+627, Cheltuieli cu serviciile bancare şi asimilate,Cheltuieli,CPrPd,ChEx,,2
+628, Alte cheltuieli cu serviciile executate de terţi,Cheltuieli,CPrPd,ChEx,,2
+63," Cheltuieli cu alte impozite, taxe şi vărsăminte asimilate",Cheltuieli,CPrPd,ChEx,,2
+635," Cheltuieli cu alte impozite, taxe şi vărsăminte asimilate",Cheltuieli,CPrPd,ChEx,,2
+64, Cheltuieli cu personalul,Cheltuieli,CPrPd,ChEx,,2
+641, Cheltuieli cu salariile personalului,Cheltuieli,CPrPd,ChEx,,2
+642, Cheltuieli cu avantajele în natură şi tichetele acordate salariaţilor,Cheltuieli,CPrPd,ChEx,,2
+6421, Cheltuieli cu avantajele în natură acordate salariaţilor,Cheltuieli,CPrPd,ChEx,,2
+6422, Cheltuieli cu tichetele acordate salariaţilor,Cheltuieli,CPrPd,ChEx,,2
+643, Cheltuieli cu remunerarea în instrumente de capitaluri proprii,Cheltuieli,CPrPd,ChEx,,2
+644, Cheltuieli cu primele reprezentând participarea personalului la profit,Cheltuieli,CPrPd,ChEx,,2
+645, Cheltuieli privind asigurările şi protecţia socială,Cheltuieli,CPrPd,ChEx,,2
+6451, Cheltuieli privind contribuţia unităţii la asigurările sociale,Cheltuieli,CPrPd,ChEx,,2
+6452, Cheltuieli privind contribuţia unităţii pentru ajutorul de şomaj,Cheltuieli,CPrPd,ChEx,,2
+6453, Cheltuieli privind contribuţia angajatorului pentru asigurările sociale de sănătate,Cheltuieli,CPrPd,ChEx,,2
+6455, Cheltuieli privind contribuţia unităţii la asigurările de viaţă,Cheltuieli,CPrPd,ChEx,,2
+6456, Cheltuieli privind contribuţia unităţii la fondurile de pensii facultative,Cheltuieli,CPrPd,ChEx,,2
+6457, Cheltuieli privind contribuţia unităţii la primele de asigurare voluntară de sănătate,Cheltuieli,CPrPd,ChEx,,2
+6458, Alte cheltuieli privind asigurările şi protecţia socială,Cheltuieli,CPrPd,ChEx,,2
+646, Cheltuieli privind contribuția asiguratorie pentru muncă ,Cheltuieli,CPrPd,ChEx,,2
+6461, Cheltuieli privind contribuția asiguratorie pentru muncă pentru munca corespunzatoare salariatilor,Cheltuieli,CPrPd,ChEx,,2
+6462," Cheltuieli privind contribuția asiguratorie pentru muncă pentru munca corespunzatoare altor persoane, decat salariatii",Cheltuieli,CPrPd,ChEx,,2
+65, Alte cheltuieli de exploatare,Cheltuieli,CPrPd,ChEx,,2
+651, Cheltuieli din operaţiuni de fiducie,Cheltuieli,CPrPd,ChEx,,2
+6511, Cheltuieli ocazionate de constituirea fiduciei,Cheltuieli,CPrPd,ChEx,,2
+6512, Cheltuieli din derularea operaţiunilor de fiducie,Cheltuieli,CPrPd,ChEx,,2
+6513, Cheltuieli din lichidarea operaţiunilor de fiducie,Cheltuieli,CPrPd,ChEx,,2
+652, Cheltuieli cu protecţia mediului înconjurător,Cheltuieli,CPrPd,ChEx,,2
+654, Pierderi din creanţe şi debitori diverşi,Cheltuieli,CPrPd,ChEx,,2
+655, Cheltuieli din reevaluarea imobilizărilor corporale,Cheltuieli,CPrPd,ChEx,,2
+658, Alte cheltuieli de exploatare,Cheltuieli,CPrPd,ChEx,,2
+6581," Despăgubiri, amenzi şi penalităţi",Cheltuieli,CPrPd,ChEx,,2
+6582, Donaţii acordate,Cheltuieli,CPrPd,ChEx,,2
+6583, Cheltuieli privind activele cedate şi alte operaţiuni de capital,Cheltuieli,CPrPd,ChEx,,2
+6584,Cheltuieli cu sumele sau bunurile acordate ca sponsorizări  ,Cheltuieli,CPrPd,ChEx,,2
+6586, Cheltuieli reprezentând transferuri şi contribuţii datorate în baza unor acte normative speciale,Cheltuieli,CPrPd,ChEx,,2
+6587, Cheltuieli privind calamităţile şi alte evenimente similare,Cheltuieli,CPrPd,ChEx,,2
+6588, Alte cheltuieli de exploatare,Cheltuieli,CPrPd,ChEx,,2
+66, Cheltuieli financiare,Cheltuieli,CPrPd,ChFin,,5
+663, Pierderi din creanţe legate de participaţii,Cheltuieli,CPrPd,ChFin,,5
+664, Cheltuieli privind investiţiile financiare cedate,Cheltuieli,CPrPd,ChFin,,5
+6641, Cheltuieli privind imobilizările financiare cedate,Cheltuieli,CPrPd,ChFin,,5
+6642, Pierderi din investiţiile pe termen scurt cedate,Cheltuieli,CPrPd,ChFin,,5
+665, Cheltuieli din diferenţe de curs valutar,Cheltuieli,CPrPd,ChFin,,5
+6651, Diferenţe nefavorabile de curs valutar legate de elementele monetare exprimate în valută,Cheltuieli,CPrPd,ChFin,,5
+6652, Diferenţe nefavorabile de curs valutar din evaluarea elementelor monetare care fac parte din investiţia netă într-o entitate străină,Cheltuieli,CPrPd,ChFin,,5
+666, Cheltuieli privind dobânzile,Cheltuieli,CPrPd,ChFin,,5
+667, Cheltuieli privind sconturile acordate,Cheltuieli,CPrPd,ChFin,,5
+668, Alte cheltuieli financiare,Cheltuieli,CPrPd,ChFin,,5
+68," Cheltuieli cu amortizările, provizioanele şi ajustările pentru depreciere sau pierdere de valoare",Cheltuieli,CPrPd,ChFin,,5
+681," Cheltuieli de exploatare privind amortizările, provizioanele şi ajustările pentru depreciere",Cheltuieli,CPrPd,ChFin,,5
+6811, Cheltuieli de exploatare privind amortizarea imobilizărilor,Cheltuieli,CPrPd,ChFin,,5
+6812, Cheltuieli de exploatare privind provizioanele,Cheltuieli,CPrPd,ChFin,,5
+6813, Cheltuieli de exploatare privind ajustările pentru deprecierea imobilizărilor,Cheltuieli,CPrPd,ChFin,,5
+6814, Cheltuieli de exploatare privind ajustările pentru deprecierea activelor circulante,Cheltuieli,CPrPd,ChFin,,5
+6817, Cheltuieli de exploatare privind ajustările pentru deprecierea fondului comercial,Cheltuieli,CPrPd,ChFin,,5
+686," Cheltuieli financiare privind amortizările, provizioanele şi ajustările pentru pierdere de valoare",Cheltuieli,CPrPd,ChFin,,5
+6861, Cheltuieli privind actualizarea provizioanelor,Cheltuieli,CPrPd,ChFin,,5
+6863, Cheltuieli financiare privind ajustările pentru pierderea de valoare a imobilizărilor financiare,Cheltuieli,CPrPd,ChFin,,5
+6864, Cheltuieli financiare privind ajustările pentru pierderea de valoare a activelor circulante,Cheltuieli,CPrPd,ChFin,,5
+6865, Cheltuieli financiare privind amortizarea diferenţelor aferente titlurilor de stat,Cheltuieli,CPrPd,ChFin,,5
+6868, Cheltuieli financiare privind amortizarea primelor de rambursare a obligaţiunilor şi a altor datorii,Cheltuieli,CPrPd,ChFin,,5
+69, Cheltuieli cu impozitul pe profit şi alte impozite,Cheltuieli,CPrPd,ChFin,,5
+691, Cheltuieli cu impozitul pe profit,Cheltuieli,CPrPd,ChFin,,5
+695, Cheltuieli cu impozitul specific unor activităţi,Cheltuieli,CPrPd,ChFin,,5
+698, Cheltuieli cu impozitul pe venit şi cu alte impozite care nu apar în elementele de mai sus,Cheltuieli,CPrPd,ChFin,,5
+70, Cifra de afaceri netă,Venituri,CPrPd,VenEx,,1
+701," Venituri din vânzarea produselor finite, produselor agricole şi a activelor biologice de natura stocurilor",Venituri,CPrPd,VenEx,,1
+7015, Venituri din vânzarea produselor finite,Venituri,CPrPd,VenEx,,1
+7017, Venituri din vânzarea produselor agricole,Venituri,CPrPd,VenEx,,1
+7018, Venituri din vânzarea activelor biologice de natura stocurilor,Venituri,CPrPd,VenEx,,1
+702, Venituri din vânzarea semifabricatelor,Venituri,CPrPd,VenEx,,1
+703, Venituri din vânzarea produselor reziduale,Venituri,CPrPd,VenEx,,1
+704, Venituri din servicii prestate,Venituri,CPrPd,VenEx,,1
+705, Venituri din studii şi cercetări,Venituri,CPrPd,VenEx,,1
+706," Venituri din redevenţe, locaţii de gestiune şi chirii",Venituri,CPrPd,VenEx,,1
+707, Venituri din vânzarea mărfurilor,Venituri,CPrPd,VenEx,,1
+708, Venituri din activităţi diverse,Venituri,CPrPd,VenEx,,1
+709, Reduceri comerciale acordate,Venituri,CPrPd,VenEx,,1
+71, Venituri aferente costului producţiei în curs de execuţie,Venituri,CPrPd,VenEx,,1
+711, Venituri aferente costurilor stocurilor de produse,Venituri,CPrPd,VenEx,,1
+712, Venituri aferente costurilor serviciilor în curs de execuţie,Venituri,CPrPd,VenEx,,1
+72, Venituri din producţia de imobilizări,Venituri,CPrPd,VenEx,,1
+721, Venituri din producţia de imobilizări necorporale,Venituri,CPrPd,VenEx,,1
+722, Venituri din producţia de imobilizări corporale,Venituri,CPrPd,VenEx,,1
+725, Venituri din producţia de investiţii imobiliare,Venituri,CPrPd,VenEx,,1
+74, Venituri din subvenţii de exploatare,Venituri,CPrPd,VenEx,,1
+741, Venituri din subvenţii de exploatare,Venituri,CPrPd,VenEx,,1
+7411, Venituri din subvenţii de exploatare aferente cifrei de afaceri,Venituri,CPrPd,VenEx,,1
+7412, Venituri din subvenţii de exploatare pentru materii prime şi materiale,Venituri,CPrPd,VenEx,,1
+7413, Venituri din subvenţii de exploatare pentru alte cheltuieli externe,Venituri,CPrPd,VenEx,,1
+7414, Venituri din subvenţii de exploatare pentru plata personalului,Venituri,CPrPd,VenEx,,1
+7415, Venituri din subvenţii de exploatare pentru asigurări şi protecţie socială,Venituri,CPrPd,VenEx,,1
+7416, Venituri din subvenţii de exploatare pentru alte cheltuieli de exploatare,Venituri,CPrPd,VenEx,,1
+7417, Venituri din subvenţii de exploatare în caz de calamităţi şi alte evenimente similare,Venituri,CPrPd,VenEx,,1
+7418, Venituri din subvenţii de exploatare pentru dobânda datorată,Venituri,CPrPd,VenEx,,1
+7419, Venituri din subvenţii de exploatare aferente altor venituri,Venituri,CPrPd,VenEx,,1
+75, Alte venituri din exploatare,Venituri,CPrPd,VenEx,,1
+751, Venituri din operaţiuni de fiducie,Venituri,CPrPd,VenEx,,1
+7511, Venituri ocazionate de constituirea fiduciei,Venituri,CPrPd,VenEx,,1
+7512, Venituri din derularea operaţiunilor de fiducie,Venituri,CPrPd,VenEx,,1
+7513, Venituri din lichidarea operaţiunilor de fiducie,Venituri,CPrPd,VenEx,,1
+754, Venituri din creanţe reactivate şi debitori diverşi,Venituri,CPrPd,VenEx,,1
+755, Venituri din reevaluarea imobilizărilor corporale,Venituri,CPrPd,VenEx,,1
+758, Alte venituri din exploatare,Venituri,CPrPd,VenEx,,1
+7581," Venituri din despăgubiri, amenzi şi penalităţi",Venituri,CPrPd,VenEx,,1
+7582, Venituri din donaţii primite,Venituri,CPrPd,VenEx,,1
+7583, Venituri din vânzarea activelor şi alte operaţiuni de capital,Venituri,CPrPd,VenEx,,1
+7584, Venituri din subvenţii pentru investiţii,Venituri,CPrPd,VenEx,,1
+7586, Venituri reprezentând transferuri cuvenite în baza unor acte normative speciale,Venituri,CPrPd,VenEx,,1
+7588, Alte venituri din exploatare,Venituri,CPrPd,VenEx,,1
+76, Venituri financiare,Venituri,CPrPd,VenFin,,4
+761, Venituri din imobilizări financiare,Venituri,CPrPd,VenFin,,4
+7611, Venituri din acţiuni deţinute la entităţile afiliate,Venituri,CPrPd,VenFin,,4
+7612, Venituri din acţiuni deţinute la entităţi asociate,Venituri,CPrPd,VenFin,,4
+7613, Venituri din acţiuni deţinute la entităţi controlate în comun,Venituri,CPrPd,VenFin,,4
+7615, Venituri din alte imobilizări financiare,Venituri,CPrPd,VenFin,,4
+762, Venituri din investiţii financiare pe termen scurt,Venituri,CPrPd,VenFin,,4
+764, Venituri din investiţii financiare cedate,Venituri,CPrPd,VenFin,,4
+7641, Venituri din imobilizări financiare cedate,Venituri,CPrPd,VenFin,,4
+7642, Câştiguri din investiţii pe termen scurt cedate,Venituri,CPrPd,VenFin,,4
+765, Venituri din diferenţe de curs valutar,Venituri,CPrPd,VenFin,,4
+7651, Diferenţe favorabile de curs valutar legate de elementele monetare exprimate în valută,Venituri,CPrPd,VenFin,,4
+7652, Diferenţe favorabile de curs valutar din evaluarea elementelor monetare care fac parte din investiţia netă într-o entitate străină,Venituri,CPrPd,VenFin,,4
+766, Venituri din dobânzi,Venituri,CPrPd,VenFin,,4
+767, Venituri din sconturi obţinute,Venituri,CPrPd,VenFin,,4
+768, Alte venituri financiare,Venituri,CPrPd,VenFin,,4
+78," Venituri din provizioane, amortizări şi ajustări pentru depreciere sau pierdere de valoare",Venituri,CPrPd,VenFin,,4
+781, Venituri din provizioane şi ajustări pentru depreciere privind activitatea de exploatare,Venituri,CPrPd,VenFin,,4
+7812, Venituri din provizioane,Venituri,CPrPd,VenFin,,4
+7813, Venituri din ajustări pentru deprecierea imobilizărilor,Venituri,CPrPd,VenFin,,4
+7814, Venituri din ajustări pentru deprecierea activelor circulante,Venituri,CPrPd,VenFin,,4
+7815, Venituri din fondul comercial negativ,Venituri,CPrPd,VenFin,,4
+786, Venituri financiare din amortizări şi ajustări pentru pierdere de valoare,Venituri,CPrPd,VenFin,,4
+7863, Venituri financiare din ajustări pentru pierderea de valoare a imobilizărilor financiare,Venituri,CPrPd,VenFin,,4
+7864, Venituri financiare din ajustări pentru pierderea de valoare a activelor circulante,Venituri,CPrPd,VenFin,,4
+7865, Venituri financiare din amortizarea diferenţelor aferente titlurilor de stat,Venituri,CPrPd,VenFin,,4
 80, Conturi în afara bilanţului,#N/A,,,,
 801, Angajamente acordate,#N/A,,,,
 8011, Giruri şi garanţii acordate,#N/A,,,,

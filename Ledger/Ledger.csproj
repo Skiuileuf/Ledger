@@ -17,6 +17,9 @@
     <None Update="balanta-verificare.cs.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="bilant.cs.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="ledger.cs.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

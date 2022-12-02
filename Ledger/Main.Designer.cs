@@ -36,8 +36,8 @@ namespace Ledger
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.debitCombo = new System.Windows.Forms.ComboBox();
-            this.creditCombo = new System.Windows.Forms.ComboBox();
+            this.debitCombo = new Ledger.AutoCompleteCombobox(this.components);
+            this.creditCombo = new Ledger.AutoCompleteCombobox(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAppendLedger = new System.Windows.Forms.Button();
@@ -62,6 +62,7 @@ namespace Ledger
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnGenerateBalanceSheet = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ledgerGridView)).BeginInit();
@@ -122,7 +123,6 @@ namespace Ledger
             // 
             // debitCombo
             // 
-            this.debitCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.debitCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.debitCombo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.debitCombo.FormattingEnabled = true;
@@ -130,11 +130,9 @@ namespace Ledger
             this.debitCombo.Name = "debitCombo";
             this.debitCombo.Size = new System.Drawing.Size(252, 23);
             this.debitCombo.TabIndex = 0;
-            this.debitCombo.TextChanged += new System.EventHandler(this.debitCombo_TextChanged);
             // 
             // creditCombo
             // 
-            this.creditCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.creditCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.creditCombo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.creditCombo.FormattingEnabled = true;
@@ -378,11 +376,22 @@ namespace Ledger
             this.label11.TabIndex = 15;
             this.label11.Text = "label11";
             // 
+            // btnGenerateBalanceSheet
+            // 
+            this.btnGenerateBalanceSheet.Location = new System.Drawing.Point(224, 463);
+            this.btnGenerateBalanceSheet.Name = "btnGenerateBalanceSheet";
+            this.btnGenerateBalanceSheet.Size = new System.Drawing.Size(184, 23);
+            this.btnGenerateBalanceSheet.TabIndex = 16;
+            this.btnGenerateBalanceSheet.Text = "Genereaza Bilantul si CPrPi\r\n\r\n";
+            this.btnGenerateBalanceSheet.UseVisualStyleBackColor = true;
+            this.btnGenerateBalanceSheet.Click += new System.EventHandler(this.btnGenerateBalanceSheet_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 498);
+            this.Controls.Add(this.btnGenerateBalanceSheet);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox4);
@@ -418,8 +427,8 @@ namespace Ledger
         private Label label1;
         private Label label2;
         private Label label3;
-        private ComboBox debitCombo;
-        private ComboBox creditCombo;
+        private AutoCompleteCombobox debitCombo;
+        private AutoCompleteCombobox creditCombo;
         private Label label4;
         private Label label5;
         private Label label6;
@@ -444,5 +453,6 @@ namespace Ledger
         private Label label10;
         private Label label11;
         private Timer timer1;
+        private Button btnGenerateBalanceSheet;
     }
 }

@@ -55,95 +55,6 @@ namespace Ledger
             ledgerGridView.DataSource = LedgerManager.OperationRecords;
         }
 
-        private bool _canUpdate = true;
-
-        private bool _needUpdate = false;
-
-        private ComboBox _comboBoxToUpdate;
-
-        //If text has been changed then start timer
-        //If the user doesn't change text while the timer runs then start search
-        private void autocompleteComboBox_TextChanged(object sender, EventArgs e)
-        {
-            if (_needUpdate)
-            {
-                if (_canUpdate)
-                {
-                    _canUpdate = false;
-                    _comboBoxToUpdate = (ComboBox)sender;
-                    UpdateData();
-                }
-                else
-                {
-                    RestartTimer();
-                }
-            }
-        }
-
-        private void UpdateData()
-        {
-            if (_comboBoxToUpdate.Text.Length > 1)
-            {
-                //List<string> searchData = Search.GetData(_comboBoxToUpdate.Text);
-                List<string> searchData = new List<string>();
-                AccountsManager.Accounts.ForEach(acc => searchData.Add($"{acc.Id} : {acc.Nume}"));
-                HandleTextChanged(searchData);
-            }
-        }
-
-        //If an item was selected don't start new search
-        private void combobox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _needUpdate = false;
-        }
-
-        //Update data only when the user (not program) change something
-        private void combobox1_TextUpdate(object sender, EventArgs e)
-        {
-            _needUpdate = true;
-        }
-
-        //While timer is running don't start search
-        //timer1.Interval = 1500;
-        private void RestartTimer()
-        {
-            timer1.Stop();
-            _canUpdate = false;
-            timer1.Start();
-        }
-
-        //Update data when timer stops
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            _canUpdate = true;
-            timer1.Stop();
-            UpdateData();
-        }
-
-        //Update combobox with new data
-        private void HandleTextChanged(List<string> dataSource)
-        {
-            var text = _comboBoxToUpdate.Text;
-
-            if (dataSource.Count() > 0)
-            {
-                _comboBoxToUpdate.DataSource = dataSource;
-
-                var sText = _comboBoxToUpdate.Items[0].ToString();
-                _comboBoxToUpdate.SelectionStart = text.Length;
-                _comboBoxToUpdate.SelectionLength = sText.Length - text.Length;
-                _comboBoxToUpdate.DroppedDown = true;
-
-
-                return;
-            }
-            else
-            {
-                _comboBoxToUpdate.DroppedDown = false;
-                _comboBoxToUpdate.SelectionStart = text.Length;
-            }
-        }
-
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Comma Separated Values|*.csv" })
@@ -188,8 +99,10 @@ namespace Ledger
 
             //Reset fields
             txtNotaOperatiei.Text = "";
-            debitCombo.SelectedIndex = 0;
-            creditCombo.SelectedIndex = 0;
+            //debitCombo.SelectedIndex = 0;
+            debitCombo.Text = "";
+            //creditCombo.SelectedIndex = 0;
+            creditCombo.Text = "";
             valueBox.Text = "";
 
             txtNotaOperatiei.Focus();
@@ -231,7 +144,7 @@ namespace Ledger
             MessageBox.Show("GATA GENERAREA");
         }
 
-        private void debitCombo_TextChanged(object sender, EventArgs e)
+        private void btnGenerateBalanceSheet_Click(object sender, EventArgs e)
         {
 
         }
