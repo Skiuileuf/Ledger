@@ -142,30 +142,10 @@ namespace Ledger
 
         private void btnGenerateT_Click(object sender, EventArgs e)
         {
-            //Gaseste toate conturile unice
-            //Pentru fiecare cont genereaza un tabel
-
-            //Suma se adauga la contul debitor pe coloana debit
-            //Suma se adauga la contul creditor pe coloana credit
-            //Se calculeaza rulajul debitor/creditor
-            //Se calculeaza total sume debitoare/creditoare
-            //Se calculeaza sold fimal debitor/creditor si se pune pe coloana opusa naturii sale
-
-            //Pentru validare - se aduna toate valorile credit cu toate valorile debit, daca sumele sunt diferite datele nu sunt valide (elementul lipsa are jumate din valoarea diferentei)
-            //Se umple o foaie cu datele rezultate.
-
-            Dictionary<int, LedgerManager.LedgerRecord> Conturi = LedgerManager.ProcessLedgerRecords();
-            LedgerManager.LedgerModel model = new LedgerManager.LedgerModel
+            if (!backgroundWorkerGenerateT.IsBusy)
             {
-                Accounts = Conturi.Values.ToList(),
-                OperationRecords = LedgerManager.OperationRecords.ToList()
-
-            };
-
-            var document = DocumentFactory.Create("ledger.cs.docx", model);
-            document.Generate("ledger.docx");
-            MessageBox.Show("GATA GENERAREA");
-
+                backgroundWorkerGenerateT.RunWorkerAsync();
+            }
         }
 
         private void btnGenerateVerification_Click(object sender, EventArgs e)
@@ -209,6 +189,53 @@ namespace Ledger
             {
                 //Just exit
             }
+        }
+
+        void ReportProgressUpdate(int progress, string description)
+        {
+            backgroundWorkerGenerateT.ReportProgress(progress);
+            statusLabel.Text = description;
+        }
+
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            statusProgressBar.Value = e.ProgressPercentage;
+        }
+
+        private void backgroundWorkerGenerateT_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //Gaseste toate conturile unice
+            //Pentru fiecare cont genereaza un tabel
+
+            //Suma se adauga la contul debitor pe coloana debit
+            //Suma se adauga la contul creditor pe coloana credit
+            //Se calculeaza rulajul debitor/creditor
+            //Se calculeaza total sume debitoare/creditoare
+            //Se calculeaza sold fimal debitor/creditor si se pune pe coloana opusa naturii sale
+
+            //Pentru validare - se aduna toate valorile credit cu toate valorile debit, daca sumele sunt diferite datele nu sunt valide (elementul lipsa are jumate din valoarea diferentei)
+            //Se umple o foaie cu datele rezultate.
+            ReportProgressUpdate(0, "Starting generating");
+            Dictionary<int, LedgerManager.LedgerRecord> Conturi = LedgerManager.ProcessLedgerRecords();
+            ReportProgressUpdate(33, "Process accounts");
+            LedgerManager.LedgerModel model = new LedgerManager.LedgerModel
+            {
+                Accounts = Conturi.Values.ToList(),
+                OperationRecords = LedgerManager.OperationRecords.ToList()
+
+            };
+
+            ReportProgressUpdate(50, "Load document template");
+            var document = DocumentFactory.Create("ledger.cs.docx", model);
+            ReportProgressUpdate(66, "Fill document template");
+            document.Generate("ledger.docx");
+            ReportProgressUpdate(100, "Done (took n ms)");
+        }
+
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            SystemSounds.Exclamation.Play();
+            this.FlashNotification();
         }
     }
 }

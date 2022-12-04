@@ -66,6 +66,8 @@ namespace Ledger
             this.statusProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.backgroundWorkerGenerateT = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorkerGenerateVerification = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ledgerGridView)).BeginInit();
@@ -418,12 +420,24 @@ namespace Ledger
             // statusLabel
             // 
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(118, 17);
-            this.statusLabel.Text = "toolStripStatusLabel1";
+            this.statusLabel.Size = new System.Drawing.Size(39, 17);
+            this.statusLabel.Text = "Status";
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // backgroundWorkerGenerateT
+            // 
+            this.backgroundWorkerGenerateT.WorkerReportsProgress = true;
+            this.backgroundWorkerGenerateT.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerGenerateT_DoWork);
+            this.backgroundWorkerGenerateT.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
+            this.backgroundWorkerGenerateT.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
+            // 
+            // backgroundWorkerGenerateVerification
+            // 
+            this.backgroundWorkerGenerateVerification.WorkerReportsProgress = true;
+            this.backgroundWorkerGenerateVerification.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
             // 
             // Main
             // 
@@ -501,5 +515,7 @@ namespace Ledger
         private ToolStripProgressBar statusProgressBar;
         private ToolStripStatusLabel statusLabel;
         private ErrorProvider errorProvider;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerGenerateT;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerGenerateVerification;
     }
 }
