@@ -32,7 +32,8 @@ namespace Ledger
             }
 
             IList<object> values = m_collectionList
-                .Where(x => x.ToString().ToLower().Contains(Text.ToLower()))
+                //.Where(x => x.ToString().ToLower().Normalize(NormalizationForm.FormKD).Contains(Text.ToLower().Normalize(NormalizationForm.FormKD)))
+                .Where(x => x.ToString().NormalizeStripAccents().Contains(Text.NormalizeStripAccents()))
                 .ToList<object>();
 
             this.Items.Clear();

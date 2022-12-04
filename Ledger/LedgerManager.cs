@@ -17,11 +17,6 @@ namespace Ledger
             public List<OperationRecord> OperationRecords = new List<OperationRecord>();
             public List<LedgerRecord> Accounts = new List<LedgerRecord>();
 
-            public bool Validate()
-            {
-                return true;
-            }
-
             public class RecordRow
             {
                 public int debitRecordId;
@@ -34,10 +29,10 @@ namespace Ledger
             public List<RecordRow> GenerateRecordRows(int accountIndex)
             {
                 List<RecordRow> result = new List<RecordRow>();
-                LedgerRecord account = Accounts.Find(rec => rec.IdCont == accountIndex);
+                LedgerRecord? account = Accounts.Where(rec => rec.IdCont == accountIndex).FirstOrDefault(); 
 
-                int debitCount = account.Debit.Rulaj.Count();
-                int creditCount = account.Credit.Rulaj.Count();
+                int debitCount = account.Debit.Rulaj.Count;
+                int creditCount = account.Credit.Rulaj.Count;
 
                 int size = Math.Min(debitCount, creditCount);
                 int delta = Math.Abs(debitCount - creditCount);
@@ -172,41 +167,41 @@ namespace Ledger
 
         public static Dictionary<int, LedgerManager.LedgerRecord> ProcessLedgerRecords()
         {
-            Dictionary<int, LedgerManager.LedgerRecord> Turi = new Dictionary<int, LedgerManager.LedgerRecord>();
+            Dictionary<int, LedgerManager.LedgerRecord> Conturi = new Dictionary<int, LedgerManager.LedgerRecord>();
 
             foreach (LedgerManager.OperationRecord or in LedgerManager.OperationRecords)
             {
                 LedgerManager.LedgerRecord? ContDebitor = null;
                 LedgerManager.LedgerRecord? ContCreditor = null;
 
-                if (!Turi.ContainsKey(or.IdContDebitor))
+                if (!Conturi.ContainsKey(or.IdContDebitor))
                 {
                     ContDebitor = new LedgerManager.LedgerRecord()
                     {
                         IdCont = or.IdContDebitor,
                         NumeCont = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContDebitor).Nume,
-                        eContDebitor = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContDebitor).Intrari == "C" ? true : false,
+                        eContDebitor = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContDebitor).Intrari == "C",
                     };
-                    Turi.Add(or.IdContDebitor, ContDebitor);
+                    Conturi.Add(or.IdContDebitor, ContDebitor);
                 }
                 else
                 {
-                    ContDebitor = Turi[or.IdContDebitor];
+                    ContDebitor = Conturi[or.IdContDebitor];
                 }
 
-                if (!Turi.ContainsKey(or.IdContCreditor))
+                if (!Conturi.ContainsKey(or.IdContCreditor))
                 {
                     ContCreditor = new LedgerManager.LedgerRecord()
                     {
                         IdCont = or.IdContCreditor,
                         NumeCont = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContCreditor).Nume,
-                        eContDebitor = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContCreditor).Intrari == "C" ? true : false,
+                        eContDebitor = AccountsManager.Accounts.Find(cont => cont.Id == or.IdContCreditor).Intrari == "C",
                     };
-                    Turi.Add(or.IdContCreditor, ContCreditor);
+                    Conturi.Add(or.IdContCreditor, ContCreditor);
                 }
                 else
                 {
-                    ContCreditor = Turi[or.IdContCreditor];
+                    ContCreditor = Conturi[or.IdContCreditor];
                 }
 
                 //FIXME SA STIE AUTOMAT DACA SOLDUL INITIAL E DEBIT SAU CREDIT
@@ -225,7 +220,7 @@ namespace Ledger
                 }
             }
 
-            return Turi;
+            return Conturi;
         }
     }
 }

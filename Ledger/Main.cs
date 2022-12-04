@@ -1,8 +1,9 @@
-using SharpDocx;
+﻿using SharpDocx;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Ledger
@@ -30,6 +31,7 @@ namespace Ledger
 
         private void valueBox_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //If the input char is not a control char (especially backspace), a digit or the decimal separator, "eat" the input
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -41,36 +43,57 @@ namespace Ledger
             }
         }
 
+        string OpenFilePath = string.Empty;
+        bool FileWasModified = false;
+
+        private void UpdateFormTitle()
+        {
+            this.Text = $"Ledger | {(OpenFilePath == String.Empty ? "No file open": OpenFilePath )} {(FileWasModified? "" : " *")}";
+        }
+
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Comma Separated Values|*.csv", Multiselect = false })
             {
                 if(ofd.ShowDialog() == DialogResult.OK)
                 {
-                    this.Text = $"Ledger | {ofd.FileName}";
-                    LedgerManager.OpenLedger(ofd.FileName);
+                    OpenFilePath = ofd.FileName;
+                    LedgerManager.OpenLedger(OpenFilePath);
+                } else
+                {
+                    //File was not opened
+
                 }
             }
 
+            UpdateFormTitle();
             ledgerGridView.DataSource = LedgerManager.OperationRecords;
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Comma Separated Values|*.csv" })
+            if (OpenFilePath == string.Empty) //If the file has not been saved yet
             {
-                if (sfd.ShowDialog() == DialogResult.OK)
+                using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Comma Separated Values|*.csv" })
                 {
-                    //this.Text = $"Ledger | {sfd.FileName}";
-                    LedgerManager.SaveLedger(sfd.FileName);
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        OpenFilePath = sfd.FileName;
+                        LedgerManager.SaveLedger(OpenFilePath);
+                    }
                 }
+            } else //A previous version of the file has been saved
+            {
+                LedgerManager.SaveLedger(OpenFilePath);
             }
 
+            UpdateFormTitle();
             ledgerGridView.DataSource = LedgerManager.OperationRecords;
         }
 
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
+            OpenFilePath = string.Empty; //Mark the file as unsaved yet
             using(SaveFileDialog sfd = new SaveFileDialog() { Filter = "Comma Separated Values|*.csv" })
             {
                 if (sfd.ShowDialog() == DialogResult.OK)
@@ -85,27 +108,36 @@ namespace Ledger
 
         private void btnAppendLedger_Click(object sender, EventArgs e)
         {
-            LedgerManager.OperationRecord record = new LedgerManager.OperationRecord()
+            //Cheap data validation
+            try
             {
-                Index = LedgerManager.OperationRecords.Count() + 1,
-                NotaOperatiei = txtNotaOperatiei.Text,
-                AnalizaOperatiei = "STUB Analiza Operatiei",
-                IdContDebitor = int.Parse(debitCombo.Text.Split(':')[0].Trim()),
-                IdContCreditor = int.Parse(creditCombo.Text.Split(':')[0].Trim()),
-                Valoare = double.Parse(valueBox.Text)
-            };
+                LedgerManager.OperationRecord record = new LedgerManager.OperationRecord()
+                {
+                    Index = LedgerManager.OperationRecords.Count + 1,
+                    NotaOperatiei = txtNotaOperatiei.Text,
+                    AnalizaOperatiei = "STUB Analiza Operatiei",
+                    IdContDebitor = int.Parse(debitCombo.Text.Split(':')[0].Trim()),
+                    IdContCreditor = int.Parse(creditCombo.Text.Split(':')[0].Trim()),
+                    Valoare = double.Parse(valueBox.Text)
+                };
 
-            LedgerManager.OperationRecords.Add(record);
+                LedgerManager.OperationRecords.Add(record);
 
-            //Reset fields
-            txtNotaOperatiei.Text = "";
-            //debitCombo.SelectedIndex = 0;
-            debitCombo.Text = "";
-            //creditCombo.SelectedIndex = 0;
-            creditCombo.Text = "";
-            valueBox.Text = "";
+                FileWasModified = true;
+                UpdateFormTitle();
 
-            txtNotaOperatiei.Focus();
+                //Reset fields
+                txtNotaOperatiei.Text = string.Empty;
+                debitCombo.Text = string.Empty;
+                creditCombo.Text = string.Empty;
+                valueBox.Text = string.Empty;
+
+                txtNotaOperatiei.Focus();
+            } catch (Exception ex)
+            {
+                SystemSounds.Beep.Play();
+                statusLabel.Text = $"{ex.Message} ({ex.Source})";
+            }
         }
 
         private void btnGenerateT_Click(object sender, EventArgs e)
@@ -147,6 +179,36 @@ namespace Ledger
         private void btnGenerateBalanceSheet_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (FileWasModified)
+            {
+                string title = "Salvezi modificarile?";
+                string message = "Modificarile facute la fisierul deschis inca nu au fost salvate.";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+                switch (MessageBox.Show(title, message, buttons))
+                {
+                    case DialogResult.Yes:
+                        //Save file and close
+                        break;
+                    case DialogResult.No:
+
+                        //Just close
+                        break;
+                    case DialogResult.Cancel:
+                        //Cancel closing the form
+                        e.Cancel = true;
+                        break;
+                    default:
+                        //Invalid, nu ar trebui sa apara vreodata
+                        break;
+                }
+            } else
+            {
+                //Just exit
+            }
         }
     }
 }

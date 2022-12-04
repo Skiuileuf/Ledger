@@ -43,7 +43,7 @@ namespace Ledger
             this.btnAppendLedger = new System.Windows.Forms.Button();
             this.valueBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -61,11 +61,16 @@ namespace Ledger
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnGenerateBalanceSheet = new System.Windows.Forms.Button();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.statusProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ledgerGridView)).BeginInit();
+            this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -188,18 +193,18 @@ namespace Ledger
             this.label6.TabIndex = 1;
             this.label6.Text = "Nota Operatiei";
             // 
-            // toolStrip1
+            // toolStrip
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripButton,
             this.openToolStripButton,
             this.saveToolStripButton,
             this.printToolStripButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip.TabIndex = 4;
+            this.toolStrip.Text = "toolStrip1";
             // 
             // newToolStripButton
             // 
@@ -242,6 +247,8 @@ namespace Ledger
             // 
             // txtNotaOperatiei
             // 
+            this.txtNotaOperatiei.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNotaOperatiei.Location = new System.Drawing.Point(127, 28);
             this.txtNotaOperatiei.Name = "txtNotaOperatiei";
             this.txtNotaOperatiei.Size = new System.Drawing.Size(661, 23);
@@ -268,6 +275,9 @@ namespace Ledger
             // ledgerGridView
             // 
             this.ledgerGridView.AllowUserToAddRows = false;
+            this.ledgerGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ledgerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ledgerGridView.Location = new System.Drawing.Point(12, 246);
             this.ledgerGridView.Name = "ledgerGridView";
@@ -277,6 +287,7 @@ namespace Ledger
             // 
             // btnGenerateT
             // 
+            this.btnGenerateT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGenerateT.Location = new System.Drawing.Point(414, 463);
             this.btnGenerateT.Name = "btnGenerateT";
             this.btnGenerateT.Size = new System.Drawing.Size(184, 23);
@@ -287,6 +298,7 @@ namespace Ledger
             // 
             // btnGenerateVerification
             // 
+            this.btnGenerateVerification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGenerateVerification.Location = new System.Drawing.Point(604, 463);
             this.btnGenerateVerification.Name = "btnGenerateVerification";
             this.btnGenerateVerification.Size = new System.Drawing.Size(184, 23);
@@ -378,6 +390,7 @@ namespace Ledger
             // 
             // btnGenerateBalanceSheet
             // 
+            this.btnGenerateBalanceSheet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGenerateBalanceSheet.Location = new System.Drawing.Point(224, 463);
             this.btnGenerateBalanceSheet.Name = "btnGenerateBalanceSheet";
             this.btnGenerateBalanceSheet.Size = new System.Drawing.Size(184, 23);
@@ -386,11 +399,38 @@ namespace Ledger
             this.btnGenerateBalanceSheet.UseVisualStyleBackColor = true;
             this.btnGenerateBalanceSheet.Click += new System.EventHandler(this.btnGenerateBalanceSheet_Click);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusProgressBar,
+            this.statusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 493);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip.TabIndex = 17;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // statusProgressBar
+            // 
+            this.statusProgressBar.Name = "statusProgressBar";
+            this.statusProgressBar.Size = new System.Drawing.Size(100, 16);
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(118, 17);
+            this.statusLabel.Text = "toolStripStatusLabel1";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 498);
+            this.ClientSize = new System.Drawing.Size(800, 515);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.btnGenerateBalanceSheet);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -405,17 +445,21 @@ namespace Ledger
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNotaOperatiei);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Main";
             this.Text = "Cartea Mare";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ledgerGridView)).EndInit();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,7 +476,7 @@ namespace Ledger
         private Label label4;
         private Label label5;
         private Label label6;
-        private ToolStrip toolStrip1;
+        private ToolStrip toolStrip;
         private ToolStripButton newToolStripButton;
         private ToolStripButton openToolStripButton;
         private ToolStripButton saveToolStripButton;
@@ -452,7 +496,10 @@ namespace Ledger
         private ComboBox comboBox4;
         private Label label10;
         private Label label11;
-        private Timer timer1;
         private Button btnGenerateBalanceSheet;
+        private StatusStrip statusStrip;
+        private ToolStripProgressBar statusProgressBar;
+        private ToolStripStatusLabel statusLabel;
+        private ErrorProvider errorProvider;
     }
 }
